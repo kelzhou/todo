@@ -1,2 +1,3 @@
 Rails Application for CIS 196
 
+http://salty-shore-1261.herokuapp.com/
