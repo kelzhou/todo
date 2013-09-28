@@ -1,18 +1,18 @@
 # == Schema Information
 #
-# Table name: users
+# Table name: assignments
 #
 #  id         :integer          not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  password   :string(255)
+#  class_name :string(255)
+#  homework   :string(255)
+#  due_date   :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
 require 'test_helper'
 
-class UserTest < ActiveSupport::TestCase
+class AssignmentTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

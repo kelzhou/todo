@@ -8,6 +8,7 @@ Todo::Application.routes.draw do
   root :to => 'landing_pages#home'
 
   resources :users
+  resources :assignments
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

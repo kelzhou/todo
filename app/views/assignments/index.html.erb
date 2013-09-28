@@ -1,0 +1,19 @@
+<h1>Assignments List</h1>
+
+<table>
+ 	<tr>
+ 		<td>Class</td>
+ 		<td>Assignment</td>
+ 		<td>Due Date</td>
+ 	</tr>
+ 	<% @assignments.each do |assig| %>
+ 	<tr>
+ 		<td><%= assig.class_name %></td>
+ 		<td><%= assig.homework %></td>
+ 		<td><%= assig.due_date %></td>
+ 	</tr>
+ 	<% end %>
+</table>
+
+<br/>
+<%= link_to "New Assignment", new_assignment_path %>
