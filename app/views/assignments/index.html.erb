@@ -10,9 +10,9 @@
  	</tr>
  	<% @assignments.each do |assig| %>
  	<tr>
- 		<td><%= link_to assig.user.name, assignment_path(assig.id) %></td>
+ 		<td><%= assig.user.name%></td>
  		<td><%= assig.class_name %></td>
- 		<td><%= assig.homework %></td>
+ 		<td><%= link_to assig.homework, assignment_path(assig.id) %></td>
  		<td><%= assig.due_date %></td>
  		<td><%= link_to "Edit", edit_assignment_path(assig.id) %> <%= link_to "Delete", assig, method: :delete %></td>
 
