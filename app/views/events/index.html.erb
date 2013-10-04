@@ -1,0 +1,24 @@
+<h1>Events List</h1>
+
+<table>
+ 	<tr>
+ 		<td>User</td>
+ 		<td>Title</td>
+ 		<td>Date</td>
+ 		<td>Action</td>
+ 	</tr>
+ 	<% @events.each do |event| %>
+ 	<tr>
+ 		<td><%= link_to event.user.name, event_path(event.id) %></td>
+ 		<td><%= event.title %></td>
+ 		<td><%= event.date %></td>
+ 		<td><%= link_to "Edit", edit_event_path(event.id) %> <%= link_to "Delete", event, method: :delete %></td>
+
+ 	</tr>
+ 	<% end %>
+</table>
+
+<br/>
+<%= link_to "New Event", new_event_path %>
+<br/><br/>
+<%= link_to "Home Page", "/" %>

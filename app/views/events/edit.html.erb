@@ -1,0 +1,19 @@
+<h1>Edit Event</h1>
+
+<%= form_for(@event) do |f| %>
+    <div class="field">
+        <p>User</p>
+        <%= f.collection_select :user_id, User.all, :id, :name%>
+    </div>
+ 	<div class="field">
+    	<p>Title</p> 
+    	<%= f.text_field :title %>
+    </div>
+    <div class="field">
+        <p>Date</p> 
+        <%= f.text_field :date %>
+    </div>
+    <div class="actions">
+      	<%= f.submit %>
+    </div>
+<% end %>

@@ -1,7 +1,4 @@
 Todo::Application.routes.draw do
-  get "users/new"
-
-  get "users/index"
 
   get "landing_pages/home"
 
@@ -9,6 +6,7 @@ Todo::Application.routes.draw do
 
   resources :users
   resources :assignments
+  resources :events
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
