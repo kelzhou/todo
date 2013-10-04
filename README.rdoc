@@ -2,4 +2,4 @@ Rails Application for CIS 196
 
 http://salty-shore-1261.herokuapp.com/
 
-I created two models and controllers, Users and Assignments. You can add to the database for both tables. 
+I created three models and controllers, Users, Assignments and Events. You can create/edit/destroy to the database for all tables. 
