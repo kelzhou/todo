@@ -2,12 +2,14 @@
 
 <table>
  	<tr>
+ 		<td>User</td>
  		<td>Class</td>
  		<td>Assignment</td>
  		<td>Due Date</td>
  	</tr>
  	<% @assignments.each do |assig| %>
  	<tr>
+ 		<td><%= assig.user.name %></td>
  		<td><%= assig.class_name %></td>
  		<td><%= assig.homework %></td>
  		<td><%= assig.due_date %></td>
