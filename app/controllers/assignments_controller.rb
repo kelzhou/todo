@@ -22,7 +22,7 @@ class AssignmentsController < ApplicationController
   end
 
   def update
-    @assignment = Assignment.find(params[:is])
+    @assignment = Assignment.find(params[:id])
     if @assignment.update_attributes(params[:assignment])
       redirect_to assignment_path(@assignment.id)
     else

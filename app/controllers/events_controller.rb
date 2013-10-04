@@ -21,7 +21,7 @@ class EventsController < ApplicationController
   end
 
   def update
-    @event = Event.find(params[:is])
+    @event = Event.find(params[:id])
     if @event.update_attributes(params[:event])
       redirect_to event_path(@event.id)
     else
