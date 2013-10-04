@@ -6,13 +6,16 @@
  		<td>Class</td>
  		<td>Assignment</td>
  		<td>Due Date</td>
+ 		<td>Action</td>
  	</tr>
  	<% @assignments.each do |assig| %>
  	<tr>
- 		<td><%= assig.user.name %></td>
+ 		<td><%= link_to assig.user.name, assignment_path(assig.id) %></td>
  		<td><%= assig.class_name %></td>
  		<td><%= assig.homework %></td>
  		<td><%= assig.due_date %></td>
+ 		<td><%= link_to "Edit", edit_assignment_path(assig.id) %> <%= link_to "Delete", assig, method: :delete %></td>
+
  	</tr>
  	<% end %>
 </table>
