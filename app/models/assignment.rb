@@ -11,5 +11,8 @@
 #
 
 class Assignment < ActiveRecord::Base
-  attr_accessible :class_name, :homework, :due_date
+  belongs_to :user
+  
+  attr_accessible :class_name, :homework, :due_date, :user_id
+
 end

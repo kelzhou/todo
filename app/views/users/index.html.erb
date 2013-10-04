@@ -5,15 +5,18 @@
  		<td>Name</td>
  		<td>Email</td>
  		<td>Password</td>
+ 		<td>Action</td>
  	</tr>
  	<% @users.each do |user| %>
  	<tr>
- 		<td><%= user.name %></td>
+ 		<td><%= link_to user.name, user_path(user.id) %></td>
  		<td><%= user.email %></td>
  		<td><%= user.password %></td>
+ 		<td><%= link_to "Edit", edit_user_path(user.id) %> <%= link_to "Delete", user, method: :delete %></td>
  	</tr>
  	<% end %>
 </table>
 
+<br/>
 <%= link_to "New User", new_user_path %>
 
