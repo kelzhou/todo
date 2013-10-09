@@ -12,4 +12,10 @@
 
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password
+
+  validates :name, uniqueness: true
+  validates :name, length: { minimum: 2 }
+  validates :email, uniqueness: true
+  validates :password, length: {in: 6..20}
+
 end
