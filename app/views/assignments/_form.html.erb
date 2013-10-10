@@ -9,6 +9,7 @@
 <% end %>
 </div>
 
+<form class="form-group">
 <%= form_for(@assignment) do |f| %>
     <div class="field">
         <p>User</p>
@@ -27,6 +28,7 @@
         <%= f.text_field :due_date %>
     </div>
     <div class="actions">
-      	<%= f.submit %>
+      	<%= f.submit "Create Assignment" , :class => 'btn btn-default'%>
     </div>
 <% end %>
+</div>

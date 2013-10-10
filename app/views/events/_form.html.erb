@@ -9,6 +9,7 @@
 <% end %>
 </div>
 
+<form class="form-group">
 <%= form_for(@event) do |f| %>
     <div class="field">
         <p>User</p>
@@ -23,6 +24,7 @@
         <%= f.text_field :date %>
     </div>
     <div class="actions">
-      	<%= f.submit %>
+      	<%= f.submit "Create Event" , :class => 'btn btn-default'%>
     </div>
 <% end %>
+</form>
