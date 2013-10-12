@@ -9,26 +9,28 @@
 <% end %>
 </div>
 
-<form class="form-group">
-<%= form_for(@assignment) do |f| %>
-    <div class="field">
-        <p>User</p>
-        <%= f.collection_select :user_id, User.all, :id, :name%>
+<form class="form-horizontal" role="form">
+<div class="form-group">
+<%= form_for(@assignment, :defaults => { :input_html => { :class => "form-control" } }) do |f| %>
+    <div class="field form-group">
+        <p>User Name</p>
+        <%= f.collection_select :user_id, User.all, :id, :name %>
     </div>
- 	<div class="field">
+ 	  <div class="field form-group">
     	<p>Class</p> 
     	<%= f.text_field :class_name %>
     </div>
-    <div class="field">
+    <div class="field form-group">
     	<p>Assignment</p> 
      	<%= f.text_field :homework %>
     </div>
-    <div class="field">
+    <div class="field form-group">
         <p>Due Date</p> 
         <%= f.text_field :due_date %>
     </div>
+    <br>
     <div class="actions">
-      	<%= f.submit "Create Assignment" , :class => 'btn btn-default'%>
+      	<%= f.submit "Create Assignment" , :class => 'btn btn-primary'%>
     </div>
 <% end %>
 </div>

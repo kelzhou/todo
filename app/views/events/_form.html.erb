@@ -9,22 +9,21 @@
 <% end %>
 </div>
 
-<form class="form-group">
 <%= form_for(@event) do |f| %>
-    <div class="field">
+    <div class="field form-group">
         <p>User</p>
         <%= f.collection_select :user_id, User.all, :id, :name%>
     </div>
- 	<div class="field">
-    	<p>Title</p> 
+ 	<div class="field form-group">
+    	<p>Title of Event</p> 
     	<%= f.text_field :title %>
     </div>
-    <div class="field">
+    <div class="field form-group">
         <p>Date</p> 
         <%= f.text_field :date %>
     </div>
+    <br>
     <div class="actions">
-      	<%= f.submit "Create Event" , :class => 'btn btn-default'%>
+      	<%= f.submit "Create Event" , :class => 'btn btn-primary'%>
     </div>
 <% end %>
-</form>

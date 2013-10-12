@@ -1,6 +1,7 @@
 <h1>Assignments List</h1>
 
-<table>
+<table class="table table-hover">
+ <thead>
  	<tr>
  		<td>User</td>
  		<td>Class</td>
@@ -8,6 +9,8 @@
  		<td>Due Date</td>
  		<td>Action</td>
  	</tr>
+ </thead>
+ <tbody>
  	<% @assignments.each do |assig| %>
  	<tr>
  		<td><%= assig.user.name%></td>
@@ -15,12 +18,10 @@
  		<td><%= link_to assig.homework, assignment_path(assig.id) %></td>
  		<td><%= assig.due_date %></td>
  		<td><%= link_to "Edit", edit_assignment_path(assig.id) %> <%= link_to "Delete", assig, method: :delete %></td>
-
  	</tr>
  	<% end %>
+ </tbody>
 </table>
 
 <br/>
-<%= link_to "New Assignment", new_assignment_path %>
-<br/><br/>
-<%= link_to "Home Page", "/" %>
+<button type="button" class="btn btn-default"><%= link_to "New Assignment", new_assignment_path %></button>
