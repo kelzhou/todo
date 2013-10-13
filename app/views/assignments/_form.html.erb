@@ -9,9 +9,7 @@
 <% end %>
 </div>
 
-<form class="form-horizontal" role="form">
-<div class="form-group">
-<%= form_for(@assignment, :defaults => { :input_html => { :class => "form-control" } }) do |f| %>
+<%= form_for(@assignment) do |f| %>
     <div class="field form-group">
         <p>User Name</p>
         <%= f.collection_select :user_id, User.all, :id, :name %>
