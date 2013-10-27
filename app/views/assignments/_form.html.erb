@@ -9,6 +9,18 @@
 <% end %>
 </div>
 
+<div class="formtastic-form">
+<%= semantic_form_for @assignment do |f| %>
+  <%= f.semantic_errors %>  
+  <%= f.input :user_id, :as => :select, :collection => User.all, 
+   :include_blank => true %>
+  <%= f.input :class_name %>
+  <%= f.input :homework %>
+  <%= f.input :due_date %>
+  <%= f.action :submit %>
+
+<% end %>
+</div>
 <%= form_for(@assignment) do |f| %>
     <div class="field form-group">
         <p>User Name</p>

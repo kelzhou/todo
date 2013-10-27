@@ -11,9 +11,10 @@
 
 <div class="formtastic-form">
 <%= semantic_form_for @user do |f| %>
-  <%= f.input :name,:label => "Name" %>
-  <%= f.input :email,:label => "Email" %>
-  <%= f.input :password,:label => "Password" %>
+  <%= f.semantic_errors %>  
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :password %>
 
   <%= f.action :submit %>
 
