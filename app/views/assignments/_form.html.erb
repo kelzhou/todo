@@ -1,46 +1,13 @@
-<div class="error-msg">
-  <% if @assignment.errors.any? %>
-  <ul>
-    <% @assignment.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
-</div>
+
 
 <div class="formtastic-form">
 <%= semantic_form_for @assignment do |f| %>
   <%= f.semantic_errors %>  
-  <%= f.input :user_id, :as => :select, :collection => User.all, 
-   :include_blank => true %>
+  <%= f.input :user_id, :as => :select, :collection => User.all %>
   <%= f.input :class_name %>
   <%= f.input :homework %>
   <%= f.input :due_date %>
   <%= f.action :submit %>
 
-<% end %>
-</div>
-<%= form_for(@assignment) do |f| %>
-    <div class="field form-group">
-        <p>User Name</p>
-        <%= f.collection_select :user_id, User.all, :id, :name %>
-    </div>
- 	  <div class="field form-group">
-    	<p>Class</p> 
-    	<%= f.text_field :class_name %>
-    </div>
-    <div class="field form-group">
-    	<p>Assignment</p> 
-     	<%= f.text_field :homework %>
-    </div>
-    <div class="field form-group">
-        <p>Due Date</p> 
-        <%= f.text_field :due_date %>
-    </div>
-    <br>
-    <div class="actions">
-      	<%= f.submit "Create Assignment" , :class => 'btn btn-primary'%>
-    </div>
 <% end %>
 </div>

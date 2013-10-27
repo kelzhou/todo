@@ -13,7 +13,7 @@
  <tbody>
  	<% @assignments.each do |assig| %>
  	<tr>
- 		<td><%= assig.user.name%></td>
+ 		<td><%= assig.user.name %></td>
  		<td><%= assig.class_name %></td>
  		<td><%= link_to assig.homework, assignment_path(assig.id) %></td>
  		<td><%= assig.due_date %></td>

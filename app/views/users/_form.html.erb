@@ -1,22 +1,16 @@
-<div class="error-msg">
-  <% if @user.errors.any? %>
-  <ul>
-    <% @user.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
-</div>
+
 
 <div class="formtastic-form">
 <%= semantic_form_for @user do |f| %>
-  <%= f.semantic_errors %>  
-  <%= f.input :name %>
-  <%= f.input :email %>
-  <%= f.input :password %>
 
-  <%= f.action :submit %>
+  <%= f.semantic_errors %>
+  <%= f.inputs do %>  
+    <%= f.input :name %>
+    <%= f.input :email %>
+    <%= f.input :password %>
+  <% end %>
+
+  <%= f.action :submit, :input_html => {:class => "btn-primary"} %>
 
 <% end %>
 </div>
