@@ -9,20 +9,14 @@
 <% end %>
 </div>
 
-<%= form_for(@user) do |f| %>
-  <div class="field form-group">
-        <p>Name</p> 
-        <%= f.text_field :name%>
-      </div>
-      <div class="field form-group">
-        <p>Email</p> 
-        <%= f.text_field :email%>
-      </div>
-      <div class="field form-group">
-        <p>Password</p> 
-        <%= f.text_field :password%>
-      </div>
-        <div class="actions form-group">
-          <%= f.submit :class => 'btn btn-primary'%>
-      </div>
+<div class="formtastic-form">
+<%= semantic_form_for @user do |f| %>
+  <%= f.input :name,:label => "Name" %>
+  <%= f.input :email,:label => "Email" %>
+  <%= f.input :password,:label => "Password" %>
+
+  <%= f.action :submit %>
+
 <% end %>
+</div>
+

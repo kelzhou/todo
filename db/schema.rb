@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131004072055) do
+ActiveRecord::Schema.define(:version => 20131027002302) do
 
   create_table "assignments", :force => true do |t|
     t.string   "class_name"
@@ -34,10 +34,10 @@ ActiveRecord::Schema.define(:version => 20131004072055) do
 
   create_table "users", :force => true do |t|
     t.string   "name"
-    t.string   "email"
     t.string   "password"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "email"
   end
 
 end
