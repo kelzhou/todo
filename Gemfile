@@ -30,6 +30,7 @@ gem 'jquery-rails'
 
 gem 'formtastic'
 gem 'formtastic-bootstrap'
+gem 'postmark-rails'
 
 
 # To use ActiveModel has_secure_password

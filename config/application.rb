@@ -58,5 +58,9 @@ module Todo
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.action_mailer.delivery_method   = :postmark
+    config.action_mailer.postmark_settings = { :api_key => ENV['2cb38ae3-d143-4150-9dca-cbe8939c1858'] }
+    
   end
 end

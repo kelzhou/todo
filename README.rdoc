@@ -6,3 +6,5 @@ I created three models and controllers, Users, Assignments and Events. You can c
 I added validations to the user model and added styling (navbar, tables, forms).
 
 Gems added: formtastic and formtastic-bootstrap 
+
+Heroku add-on: Postmark (sends user creation/update/deletion emails)
