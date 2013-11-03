@@ -4,3 +4,5 @@ http://salty-shore-1261.herokuapp.com/
 
 I created three models and controllers, Users, Assignments and Events. You can create/edit/destroy to the database for all tables. 
 I added validations to the user model and added styling (navbar, tables, forms).
+
+Gems added: formtastic and formtastic-bootstrap 
