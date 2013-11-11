@@ -9,11 +9,16 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  user_id    :integer
+#  complete   :bool
+#  completed  :boolean
 #
 
 class Assignment < ActiveRecord::Base
   belongs_to :user
   
-  attr_accessible :class_name, :homework, :due_date, :user_id
+  attr_accessible :class_name, :homework, :due_date, :user_id, :completed
+
+  scope :incomplete, -> { where(completed: false).order(:homework)}
+  scope :complete, -> { where(completed: true).order(:homework)}
 
 end

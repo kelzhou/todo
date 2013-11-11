@@ -9,6 +9,8 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  user_id    :integer
+#  complete   :bool
+#  completed  :boolean
 #
 
 require 'test_helper'

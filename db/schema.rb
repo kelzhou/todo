@@ -11,16 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131027002302) do
+ActiveRecord::Schema.define(:version => 20131111014712) do
 
-  create_table "assignments", :force => true do |t|
-    t.string   "class_name"
-    t.string   "homework"
-    t.string   "due_date"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "user_id"
-  end
+# Could not dump table "assignments" because of following StandardError
+#   Unknown type 'bool' for column 'complete'
 
   create_table "events", :force => true do |t|
     t.string   "title"

@@ -1,7 +1,8 @@
 class AssignmentsController < ApplicationController
   
   def index
-    @assignments = Assignment.all
+    @assignments_complete = Assignment.complete
+    @assignments_incomplete = Assignment.incomplete
   end
 
   def new
