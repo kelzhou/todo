@@ -1,5 +1,7 @@
 <h1>Events List</h1>
 
+<br>
+<h3>Meetings</h3>
 <table class="table table-hover">
  <thead>
  	<tr>
@@ -10,7 +12,31 @@
  	</tr>
  </thead>
  <tbody>
- 	<% @events.each do |event| %>
+ 	<% @events_meetings.each do |event| %>
+ 	<tr>
+ 		<td><%= event.user.name%></td>
+ 		<td><%= link_to event.title, event_path(event.id) %></td>
+ 		<td><%= event.date %></td>
+ 		<td><%= link_to "Edit", edit_event_path(event.id) %> <%= link_to "Delete", event, method: :delete %></td>
+
+ 	</tr>
+ 	<% end %>
+ <tbody>
+</table>
+
+<br>
+<h3>Others</h3>
+<table class="table table-hover">
+ <thead>
+ 	<tr>
+ 		<td>User</td>
+ 		<td>Title</td>
+ 		<td>Date</td>
+ 		<td>Action</td>
+ 	</tr>
+ </thead>
+ <tbody>
+ 	<% @events_others.each do |event| %>
  	<tr>
  		<td><%= event.user.name%></td>
  		<td><%= link_to event.title, event_path(event.id) %></td>
