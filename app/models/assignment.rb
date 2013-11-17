@@ -18,6 +18,8 @@ class Assignment < ActiveRecord::Base
   
   attr_accessible :class_name, :homework, :due_date, :user_id, :completed
 
+  validates :user, :class_name, :homework, :due_date, :presence => true 
+
   scope :incomplete, -> { where(completed: false).order(:homework)}
   scope :complete, -> { where(completed: true).order(:homework)}
 

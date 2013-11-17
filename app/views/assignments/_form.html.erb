@@ -4,11 +4,11 @@
 <%= semantic_form_for @assignment do |f| %>
   <%= f.semantic_errors %>  
   <%= f.input :user_id, :as => :select, :collection => User.all %>
-  <%= f.input :class_name %>
-  <%= f.input :homework %>
-  <%= f.input :due_date %>
+  <%= f.input :class_name, :input_html => {:id => "form-input" } %>
+  <%= f.input :homework, :input_html => {:id => "form-input2" } %>
+  <%= f.input :due_date, :input_html => {:id => "datepicker" } %>
   <%= f.input :completed %>
   <%= f.action :submit %>
-
 <% end %>
+
 </div>
