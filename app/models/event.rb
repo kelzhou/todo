@@ -14,6 +14,8 @@ class Event < ActiveRecord::Base
   belongs_to :user
   attr_accessible :date, :title, :user_id
 
+  validates :user, :title, :date, :presence => true
+
   scope :meeting, -> { where('title = ?', "meeting")}
   scope :others, -> { where('title != ?', "meeting")}
 end

@@ -1,6 +1,6 @@
 
 <div class="formtastic-form">
-<%= semantic_form_for @event, :html => { :class => "formtastic-form"}do |f| %>
+<%= semantic_form_for @event, :html => { :class => "formtastic-form"} do |f| %>
   <%= f.semantic_errors %>  
   <%= f.input :user_id, :as => :select, :collection => User.all %>
   <%= f.input :title %>
