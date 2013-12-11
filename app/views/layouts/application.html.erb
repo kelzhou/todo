@@ -43,11 +43,19 @@
       </div>
     </div>
 
-<center>
+<!center>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-<%= yield %>
-</center>
+
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+  <%= yield %>
+  </div>
+  <div class="col-md-1"></div>
+</div>
+
+<!/center>
 
 <script>
   $('.dropdown-toggle').dropdown();
