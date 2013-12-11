@@ -5,7 +5,6 @@
  	<tr>
  		<td>Name</td>
  		<td>Email</td>
- 		<td>Password</td>
  		<td>Action</td>
  	</tr>
  </thead>
@@ -14,8 +13,11 @@
  	<tr>
  		<td><%= link_to user.name, user_path(user.id) %></td>
  		<td><%= user.email %></td>
- 		<td><%= user.password %></td>
- 		<td><%= link_to "Edit", edit_user_path(user.id) %> <%= link_to "Delete", user, method: :delete %></td>
+ 		<% if user == current_user %>
+ 		<td><%= link_to "Edit", edit_user_registration_path %> <%= link_to "Delete", user, method: :delete %></td>
+ 		<% else %>
+ 		<td>Cannot edit other users</td>
+ 		<% end %>
  	</tr>
  	<% end %>
  </tbody>

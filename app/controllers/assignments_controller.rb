@@ -12,6 +12,7 @@ class AssignmentsController < ApplicationController
 
   def create
     @assignment = Assignment.new(params[:assignment])
+    @assignment.completed = false;
     if @assignment.save
 		  redirect_to assignments_path
     else

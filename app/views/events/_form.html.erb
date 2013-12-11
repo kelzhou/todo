@@ -2,7 +2,7 @@
 <div class="formtastic-form">
 <%= semantic_form_for @event, :html => { :class => "formtastic-form"} do |f| %>
   <%= f.semantic_errors %>  
-  <%= f.input :user_id, :as => :select, :collection => User.all %>
+  <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
   <%= f.input :title %>
   <%= f.input :date, :input_html => {:id => "datepicker" } %>
 

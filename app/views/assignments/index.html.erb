@@ -4,7 +4,6 @@
 <table class="table table-hover">
  <thead>
  	<tr>
- 		<td>User</td>
  		<td>Class</td>
  		<td>Assignment</td>
  		<td>Due Date</td>
@@ -14,14 +13,15 @@
  </thead>
  <tbody>
  	<% @assignments_incomplete.each do |assig| %>
+ 	<% if assig.user == current_user %>
  	<tr>
- 		<td><%= assig.user %></td>
  		<td><%= assig.class_name %></td>
  		<td><%= link_to assig.homework, assignment_path(assig.id) %></td>
  		<td><%= assig.due_date %></td>
  		<td><%= assig.completed %></td>
  		<td><%= link_to "Edit", edit_assignment_path(assig.id) %> <%= link_to "Delete", assig, method: :delete %></td>
  	</tr>
+ 	<% end %>
  	<% end %>
  </tbody>
 </table>
@@ -31,7 +31,6 @@
 <table class="table table-hover">
  <thead>
  	<tr>
- 		<td>User</td>
  		<td>Class</td>
  		<td>Assignment</td>
  		<td>Due Date</td>
@@ -41,14 +40,15 @@
  </thead>
  <tbody>
  	<% @assignments_complete.each do |assig| %>
+ 	<% if assig.user == current_user %>
  	<tr>
- 		<td><%= assig.user %></td>
  		<td><%= assig.class_name %></td>
  		<td><%= link_to assig.homework, assignment_path(assig.id) %></td>
  		<td><%= assig.due_date %></td>
  		<td><%= assig.completed %></td>
  		<td><%= link_to "Edit", edit_assignment_path(assig.id) %> <%= link_to "Delete", assig, method: :delete %></td>
  	</tr>
+ 	<% end %>
  	<% end %>
  </tbody>
 </table>
