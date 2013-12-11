@@ -14,6 +14,13 @@ class AssignmentsController < ApplicationController
     @assignment = Assignment.new(params[:assignment])
     @assignment.completed = false;
     if @assignment.save
+      client = Postmark::ApiClient.new('2cb38ae3-d143-4150-9dca-cbe8939c1858')
+      client.deliver(from: 'zhouwe@seas.upenn.edu',
+               to: current_user.email,
+               subject: 'New Assignment Creatation',
+               html_body: "Hi #{current_user.email},<br><br>You just created a new assignment!
+                          <p>Check it out on the app!<br><br>
+                          Thanks, The Personal Planner App (http://kellysplanner.herokuapp.com/)")
 		  redirect_to assignments_path
     else
 		  render 'new'
@@ -35,6 +42,13 @@ class AssignmentsController < ApplicationController
 
   def destroy
     @assignment = Assignment.find(params[:id])
+    client = Postmark::ApiClient.new('2cb38ae3-d143-4150-9dca-cbe8939c1858')
+    client.deliver(from: 'zhouwe@seas.upenn.edu',
+               to: current_user.email,
+               subject: 'Deleted Assignment',
+               html_body: "Hi #{current_user.email},<br><br>You just deleted an assignment.
+                          <p>Check it out on the app!<br><br>
+                          Thanks, The Personal Planner App (http://kellysplanner.herokuapp.com/)")
     @assignment.destroy
     redirect_to assignments_path
   end

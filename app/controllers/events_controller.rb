@@ -14,6 +14,14 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(params[:event])
     if @event.save
+      client = Postmark::ApiClient.new('2cb38ae3-d143-4150-9dca-cbe8939c1858')
+      client.deliver(from: 'zhouwe@seas.upenn.edu',
+               to: current_user.email,
+               subject: 'New Event Creatation',
+               html_body: "Hi #{current_user.email},<br><br>You just created a new event!
+                          <p>Check it out on the app!<br><br>
+                          Thanks, The Personal Planner App (http://kellysplanner.herokuapp.com/)")
+
 		  redirect_to events_path
     else
 		  render 'new'
@@ -35,6 +43,14 @@ class EventsController < ApplicationController
 
   def destroy
     @event = Event.find(params[:id])
+    client = Postmark::ApiClient.new('2cb38ae3-d143-4150-9dca-cbe8939c1858')
+    client.deliver(from: 'zhouwe@seas.upenn.edu',
+               to: current_user.email,
+               subject: 'Deleted Event',
+               html_body: "Hi #{current_user.email},<br><br>You just deleted an event.
+                          <p>Check it out on the app!<br><br>
+                          Thanks, The Personal Planner App (http://kellysplanner.herokuapp.com/)")
+
     @event.destroy
     redirect_to events_path
   end

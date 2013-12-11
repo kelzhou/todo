@@ -1,12 +1,22 @@
 Rails Application for CIS 196
 
-http://salty-shore-1261.herokuapp.com/
+Deployed on: http://kellysplanner.herokuapp.com/
+
+The applications is a personal planning application. After creating an account, you can add your personal assignments and events.
+
+Gems: 
+Formtastic - a Rails FormBuilder DSL to make it easier to create semantically rich, readily stylable and accessible HTML forms for Rails apps (used in all forms)
+https://github.com/justinfrench/formtastic
+Devise - a flexible authentication solution for Rails based on Warden (used for user sessions)
+https://github.com/plataformatec/devise
+
+Heroku add-on: 
+Postmark - helps deliver and track transactional emails for web applications (sends user creation/update/deletion emails)
+http://developer.postmarkapp.com/
+
+Resources: Users, assignments and events. Assignments and events belongs to a user. You can create/read/update/destroy to the database for all tables (that was created by the current user).
+
+Validations of presence and uniquess are in the models. Assignments and events also make use of scopes. 
 
 
-I created three models and controllers, Users, Assignments and Events. You can create/read/update/destroy to the database for all tables (that was created by the current user).
-
-I added validations to the user model and added styling (navbar, tables, forms).
-
-Gems added: formtastic and formtastic-bootstrap 
-
-Heroku add-on: Postmark (sends user creation/update/deletion emails)
+ 
