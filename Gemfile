@@ -32,7 +32,7 @@ gem 'formtastic'
 gem 'formtastic-bootstrap'
 gem 'postmark-rails'
 gem 'jquery-ui-rails'
-
+gem 'devise'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

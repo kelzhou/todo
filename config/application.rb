@@ -61,6 +61,8 @@ module Todo
 
     config.action_mailer.delivery_method   = :postmark
     config.action_mailer.postmark_settings = { :api_key => ENV['2cb38ae3-d143-4150-9dca-cbe8939c1858'] }
+
+    config.assets.initialize_on_precompile = false
     
   end
 end
