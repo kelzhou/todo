@@ -5,8 +5,11 @@ Deployed on: http://kellysplanner.herokuapp.com/
 The applications is a personal planning application. After creating an account, you can add your personal assignments and events.
 
 Gems: 
+
 Formtastic - a Rails FormBuilder DSL to make it easier to create semantically rich, readily stylable and accessible HTML forms for Rails apps (used in all forms)
+
 https://github.com/justinfrench/formtastic
+
 Devise - a flexible authentication solution for Rails based on Warden (used for user sessions)
 https://github.com/plataformatec/devise
 

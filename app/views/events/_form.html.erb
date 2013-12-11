@@ -1,14 +1,17 @@
 
-<div class="formtastic-form">
+<!div class="formtastic-form">
 <%= semantic_form_for @event, :html => { :class => "formtastic-form"} do |f| %>
   <%= f.semantic_errors %>  
   <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
-  <%= f.input :title %>
+  <!%= f.input :title %>
+  <%= f.label :title %><br/>
+    <%= f.select(:title, options_for_select([['Meeting', 'Meeting'], ['Date', 'Date'], ['Other', 'Other']], 3)) %>
   <%= f.input :date, :input_html => {:id => "datepicker" } %>
 
-  <%= f.action :submit %>
+  <%= f.action :submit, :input_html => {:class => "btn btn-info" }  %>
 
 <% end %>
-</div>
+<!/div>
+
 
 
