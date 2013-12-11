@@ -5,7 +5,6 @@
 <table class="table table-hover">
  <thead>
  	<tr>
- 		<td>User</td>
  		<td>Title</td>
  		<td>Date</td>
  		<td>Action</td>
@@ -13,23 +12,48 @@
  </thead>
  <tbody>
  	<% @events_meetings.each do |event| %>
+ 	<% if event.user == current_user %>
  	<tr>
- 		<td><%= event.user%></td>
  		<td><%= link_to event.title, event_path(event.id) %></td>
  		<td><%= event.date %></td>
  		<td><%= link_to "Edit", edit_event_path(event.id) %> <%= link_to "Delete", event, method: :delete %></td>
 
  	</tr>
  	<% end %>
+ 	<% end %>
  <tbody>
 </table>
+
+<br>
+<h3><span class="glyphicon glyphicon-heart"></span> Dates</h3>
+<table class="table table-hover">
+ <thead>
+ 	<tr>
+ 		<td>Title</td>
+ 		<td>Date</td>
+ 		<td>Action</td>
+ 	</tr>
+ </thead>
+ <tbody>
+ 	<% @events_dates.each do |event| %>
+ 	<% if event.user == current_user %>
+ 	<tr>
+ 		<td><%= link_to event.title, event_path(event.id) %></td>
+ 		<td><%= event.date %></td>
+ 		<td><%= link_to "Edit", edit_event_path(event.id) %> <%= link_to "Delete", event, method: :delete %></td>
+
+ 	</tr>
+ 	<% end %>
+ 	<% end %>
+ <tbody>
+</table>
+
 
 <br>
 <h3><span class="glyphicon glyphicon-unchecked"></span> Others</h3>
 <table class="table table-hover">
  <thead>
  	<tr>
- 		<td>User</td>
  		<td>Title</td>
  		<td>Date</td>
  		<td>Action</td>
@@ -37,13 +61,14 @@
  </thead>
  <tbody>
  	<% @events_others.each do |event| %>
+ 	<% if event.user == current_user %>
  	<tr>
- 		<td><%= event.user%></td>
  		<td><%= link_to event.title, event_path(event.id) %></td>
  		<td><%= event.date %></td>
  		<td><%= link_to "Edit", edit_event_path(event.id) %> <%= link_to "Delete", event, method: :delete %></td>
 
  	</tr>
+ 	<% end %>
  	<% end %>
  <tbody>
 </table>

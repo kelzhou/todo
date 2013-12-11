@@ -17,5 +17,7 @@ class Event < ActiveRecord::Base
   validates :user, :title, :date, :presence => true
 
   scope :meeting, -> { where('title = ?', "Meeting")}
-  scope :others, -> { where('title != ?', "Meeting")}
+  scope :date, -> { where('title = ?', "Meeting")}
+  scope :others, lambda { {:conditions => ['title != ? AND title != ?', "Meeting", "Date"]} }
+  # -> { where('title != ?', "Meeting")}
 end
