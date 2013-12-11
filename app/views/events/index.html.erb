@@ -6,6 +6,7 @@
  <thead>
  	<tr>
  		<td>Title</td>
+ 		<td>Description</td>
  		<td>Date</td>
  		<td>Action</td>
  	</tr>
@@ -14,7 +15,8 @@
  	<% @events_meetings.each do |event| %>
  	<% if event.user == current_user %>
  	<tr>
- 		<td><%= link_to event.title, event_path(event.id) %></td>
+ 		<td><%= event.title %></td>
+ 		<td><%= event.description %></td>
  		<td><%= event.date %></td>
  		<td><%= link_to "Edit", edit_event_path(event.id) %> <%= link_to "Delete", event, method: :delete %></td>
 
@@ -30,6 +32,7 @@
  <thead>
  	<tr>
  		<td>Title</td>
+ 		<td>Description</td>
  		<td>Date</td>
  		<td>Action</td>
  	</tr>
@@ -38,7 +41,8 @@
  	<% @events_dates.each do |event| %>
  	<% if event.user == current_user %>
  	<tr>
- 		<td><%= link_to event.title, event_path(event.id) %></td>
+ 		<td><%= event.title %></td>
+ 		<td><%= event.description %></td>
  		<td><%= event.date %></td>
  		<td><%= link_to "Edit", edit_event_path(event.id) %> <%= link_to "Delete", event, method: :delete %></td>
 
@@ -55,6 +59,7 @@
  <thead>
  	<tr>
  		<td>Title</td>
+ 		<td>Description</td>
  		<td>Date</td>
  		<td>Action</td>
  	</tr>
@@ -63,7 +68,8 @@
  	<% @events_others.each do |event| %>
  	<% if event.user == current_user %>
  	<tr>
- 		<td><%= link_to event.title, event_path(event.id) %></td>
+ 		<td><%= event.title %></td>
+ 		<td><%= event.description %></td>
  		<td><%= event.date %></td>
  		<td><%= link_to "Edit", edit_event_path(event.id) %> <%= link_to "Delete", event, method: :delete %></td>
 

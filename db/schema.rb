@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131211030539) do
+ActiveRecord::Schema.define(:version => 20131211233208) do
 
   create_table "assignments", :force => true do |t|
     t.string   "class_name"
@@ -27,8 +27,9 @@ ActiveRecord::Schema.define(:version => 20131211030539) do
     t.string   "title"
     t.string   "date"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "description"
   end
 
   add_index "events", ["user_id"], :name => "index_events_on_user_id"
