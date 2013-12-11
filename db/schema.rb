@@ -13,8 +13,15 @@
 
 ActiveRecord::Schema.define(:version => 20131211030539) do
 
-# Could not dump table "assignments" because of following StandardError
-#   Unknown type 'bool' for column 'complete'
+  create_table "assignments", :force => true do |t|
+    t.string   "class_name"
+    t.string   "homework"
+    t.string   "due_date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+    t.boolean  "completed"
+  end
 
   create_table "events", :force => true do |t|
     t.string   "title"

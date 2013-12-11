@@ -17,7 +17,7 @@
   		<h2><u>Login</u></h2>
 
   	<% if !user_signed_in? %>
-  	<%= form_for(@resource, :as => :user, :url => session_path(:user)) do |f| %>
+  	<%= form_for(@resource, :as => :user, :url => session_path(:user), :html => {:class => "form"}) do |f| %>
   	<div><%= f.label :email %><br />
   	<%= f.email_field :email, :autofocus => true %></div>
   	<div><%= f.label :password %><br />
