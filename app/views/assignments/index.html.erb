@@ -19,7 +19,10 @@
  		<td><%= assig.homework %></td>
  		<td><%= assig.due_date %></td>
  		<td><%= link_to "Done!", "/assignments/complete?id=#{assig.id}", html_options = {:class => "btn btn-success"}%></td>
- 		<td><%= link_to "Edit", edit_assignment_path(assig.id) %> <%= link_to "Delete", assig, method: :delete %></td>
+ 		<td><!%= link_to "Edit", edit_assignment_path(assig.id) %> 
+ 		<%= link_to 'Edit', edit_assignment_path(assig.id),:class => 'btn btn-mini btn-warning'%>
+ 		<!%= link_to "Delete", assig, method: :delete %>
+ 		<%= link_to 'Delete', assignment_path(assig), :confirm => "Are you sure you want to delete this document?", :method => :delete, :class => 'btn btn-mini btn-danger'%></td>
  	</tr>
  	<% end %>
  	<% end %>
@@ -44,7 +47,10 @@
  		<td><%= assig.class_name %></td>
  		<td><%= link_to assig.homework, assignment_path(assig.id) %></td>
  		<td><%= assig.due_date %></td>
- 		<td><%= link_to "Edit", edit_assignment_path(assig.id) %> <%= link_to "Delete", assig, method: :delete %></td>
+ 		<td><!%= link_to "Edit", edit_assignment_path(assig.id) %> 
+ 		<%= link_to 'Edit', edit_assignment_path(assig.id),:class => 'btn btn-mini btn-warning'%>
+ 		<!%= link_to "Delete", assig, method: :delete %>
+ 		<%= link_to 'Delete', assignment_path(assig), :confirm => "Are you sure you want to delete this document?", :method => :delete, :class => 'btn btn-mini btn-danger'%></td>
  	</tr>
  	<% end %>
  	<% end %>

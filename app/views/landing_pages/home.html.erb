@@ -29,8 +29,10 @@
 	<% end %>
 	<p>Not a user? <%= link_to 'Sign Up', new_user_registration_path%>
 	<% else %>
-	<h3>Welcome, <%=current_user.email%>! </h3>
-  <h5><u> Incomplete Assignments </u></h5>
+
+	<h2>Welcome, <%=current_user.email%>! </h2><br/>
+
+  <h4><u> Incomplete Assignments </u></h4>
   <% if @assignments_incomplete.length > 0 %>
     <% @assignments_incomplete.each do |assig| %>
     <% if assig.user == current_user %>
@@ -38,9 +40,11 @@
     <% end %>
     <% end %>
   <% else %>
-  All assignments completed!
+  All assignments completed! Yay freedom!
   <% end %>
-  
+  <br/><br/><%= link_to "List of assignments",assignments_path, :class=>"btn btn-info" %>
+  <br/><br/><h4><u>Events</u></h4>
+  <%= link_to "List of events",events_path, :class=>"btn btn-info" %>
 
 	<% end %>
 	</div>
