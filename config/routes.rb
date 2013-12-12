@@ -3,6 +3,7 @@ Todo::Application.routes.draw do
   devise_for :users
 
   get "landing_pages/home"
+  get "assignments/complete"
 
   root :to => 'landing_pages#home'
 

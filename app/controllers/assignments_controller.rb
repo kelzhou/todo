@@ -40,6 +40,16 @@ class AssignmentsController < ApplicationController
     end
   end
 
+  def complete
+    @assignment = Assignment.find(params[:id])
+    @assignment.completed = true;
+    if @assignment.save
+      redirect_to assignments_path
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     @assignment = Assignment.find(params[:id])
     client = Postmark::ApiClient.new('2cb38ae3-d143-4150-9dca-cbe8939c1858')
