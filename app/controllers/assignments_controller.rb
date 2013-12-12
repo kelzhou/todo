@@ -2,8 +2,8 @@ class AssignmentsController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @assignments_complete = Assignment.complete
-    @assignments_incomplete = Assignment.incomplete
+    @assignments_complete = Assignment.complete.sort_by! { |m| m.due_date }
+    @assignments_incomplete = Assignment.incomplete.sort_by! { |m| m.due_date }
   end
 
   def new

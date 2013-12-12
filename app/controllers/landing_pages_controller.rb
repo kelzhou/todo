@@ -1,6 +1,6 @@
 class LandingPagesController < ApplicationController
   def home
-    @assignments_incomplete = Assignment.incomplete
+    @assignments_incomplete = Assignment.incomplete.sort_by! { |m| m.due_date }
     @count = 0
   	def resource_name
     	:user

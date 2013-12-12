@@ -2,10 +2,10 @@ class EventsController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @events = Event.all
-    @events_meetings = Event.meeting
-    @events_dates = Event.date
-    @events_others = Event.others
+    @events = Event.all.sort_by! { |m| m.date }
+    @events_meetings = Event.meeting.sort_by! { |m| m.date }
+    @events_dates = Event.date.sort_by! { |m| m.date }
+    @events_others = Event.others.sort_by! { |m| m.date }
   end
 
   def new
