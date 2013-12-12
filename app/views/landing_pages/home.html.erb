@@ -14,9 +14,9 @@
   <div class="col-md-5">
   	<br/><br/><br/>
   	<div class="box">
-  		<h2><u>Login</u></h2>
 
   	<% if !user_signed_in? %>
+    <h2><u>Login</u></h2>
   	<%= form_for(@resource, :as => :user, :url => session_path(:user), :html => {:class => "form"}) do |f| %>
   	<div><%= f.label :email %><br />
   	<%= f.email_field :email, :autofocus => true %></div>
@@ -29,7 +29,19 @@
 	<% end %>
 	<p>Not a user? <%= link_to 'Sign Up', new_user_registration_path%>
 	<% else %>
-	<h4>Welcome, <%=current_user.email%>! </h4>
+	<h3>Welcome, <%=current_user.email%>! </h3>
+  <h5><u> Incomplete Assignments </u></h5>
+  <% if @assignments_incomplete.length > 0 %>
+    <% @assignments_incomplete.each do |assig| %>
+    <% if assig.user == current_user %>
+      <%= "#{assig.class_name} - #{assig.homework} (Due: #{assig.due_date})" %>
+    <% end %>
+    <% end %>
+  <% else %>
+  All assignments completed!
+  <% end %>
+  
+
 	<% end %>
 	</div>
 
