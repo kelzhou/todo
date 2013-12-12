@@ -1,6 +1,7 @@
 class LandingPagesController < ApplicationController
   def home
     @assignments_incomplete = Assignment.incomplete
+    @count = 0
   	def resource_name
     	:user
   	end
