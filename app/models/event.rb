@@ -13,7 +13,7 @@
 
 class Event < ActiveRecord::Base
   belongs_to :user
-  attr_accessible :date, :title, :user_id
+  attr_accessible :date, :title, :user_id, :description
 
   validates :user, :title, :date, :presence => true
 
