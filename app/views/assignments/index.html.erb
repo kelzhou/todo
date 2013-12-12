@@ -18,7 +18,7 @@
  		<td><%= assig.class_name %></td>
  		<td><%= assig.homework %></td>
  		<td><%= assig.due_date %></td>
- 		<td><%= link_to "Done!", "/assignments/complete?id=#{assig.id}", html_options = {:class => "btn btn-info"}%></td>
+ 		<td><%= link_to "Done!", "/assignments/complete?id=#{assig.id}", html_options = {:class => "btn btn-success"}%></td>
  		<td><%= link_to "Edit", edit_assignment_path(assig.id) %> <%= link_to "Delete", assig, method: :delete %></td>
  	</tr>
  	<% end %>
@@ -52,4 +52,4 @@
 </table>
 
 <br/>
-<button type="button" class="btn btn-default"><%= link_to "New Assignment", new_assignment_path %></button>
+<%= link_to "New Assignment", new_assignment_path, html_options = {:class => "btn btn-info"} %>
