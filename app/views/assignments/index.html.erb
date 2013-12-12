@@ -45,7 +45,7 @@
  	<% if assig.user == current_user %>
  	<tr>
  		<td><%= assig.class_name %></td>
- 		<td><%= link_to assig.homework, assignment_path(assig.id) %></td>
+ 		<td><%= assig.homework %></td>
  		<td><%= assig.due_date %></td>
  		<td><!%= link_to "Edit", edit_assignment_path(assig.id) %> 
  		<%= link_to 'Edit', edit_assignment_path(assig.id),:class => 'btn btn-mini btn-warning'%>
