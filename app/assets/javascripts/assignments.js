@@ -1,7 +1,7 @@
 $(function(){
-        $("#title").click(function(){
-                $("#title").css("background-color", "pink");
-        });
+        // $("#title").click(function(){
+        //         $("#title").css("background-color", "pink");
+        // });
 
         // $("#form-input").click(function(){
         //         $(this).css("background-color", "pink");

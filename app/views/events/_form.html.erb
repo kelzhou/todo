@@ -5,7 +5,7 @@
   <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
   <!%= f.input :title %>
   <%= f.label :title %><br/>
-    <%= f.select(:title, options_for_select([['Meeting', 'Meeting'], ['Date', 'Date'], ['Other', 'Other']], 3)) %> <br/>
+    <%= f.select(:title, options_for_select([['Meeting', 'Meeting'], ['Date', 'Date'], ['Other', 'Other']], 3), {}, { :class => 'select' }) %> <br/>
   <%= f.input :description %>
   <%= f.input :date, :input_html => {:id => "datepicker" } %>
 
