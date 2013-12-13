@@ -1,26 +1,26 @@
-Rails Application for CIS 196
+Rails Application for CIS 196 Final Project
 
 Deployed on: http://kellysplanner.herokuapp.com
 
 The applications is a personal planning application. After creating an account, you can add your personal assignments and events, check off assignments as you complete them etc.
 
+Resources: 
+Users, assignments and events. Assignments and events belong to a user. You can create/read/update/destroy to the database for all tables (that was created by the current user).
+
+Validations of presence and uniquess are in the models. Assignments and events also make use of scopes as assigments have the scopes of incomplete and complete and events has the scopes of meetings, dates and others. Bootstrap used for styling and jQuery datepicker used in forms.
+
 Gems: 
 
-Formtastic - a Rails FormBuilder DSL to make it easier to create semantically rich, readily stylable and accessible HTML forms for Rails apps (used in all forms)
+1) Formtastic - a Rails FormBuilder DSL to make it easier to create semantically rich, readily stylable and accessible HTML forms for Rails apps (used in all forms)
 https://github.com/justinfrench/formtastic
 
-Devise - a flexible authentication solution for Rails based on Warden (used for user sessions)
+2) Devise - a flexible authentication solution for Rails based on Warden (used for user account creation/deletion/sessions)
 https://github.com/plataformatec/devise
 
 Heroku add-on: 
 
-Postmark - helps deliver and track transactional emails for web applications (sends user creation/deletion emails)
-http://developer.postmarkapp.com
-
-Resources: 
-Users, assignments and events. Assignments and events belong to a user. You can create/read/update/destroy to the database for all tables (that was created by the current user).
-
-Validations of presence and uniquess are in the models. Assignments and events also make use of scopes as assigments have the scopes of incomplete and complete and events has the scopes of meetings, dates and others. Bootstrap used for styling and jQuery datepicker used in forms. 
+1) Postmark - helps deliver and track transactional emails for web applications (sends user creation/deletion emails of assignments and events)
+http://developer.postmarkapp.com 
 
 
  
