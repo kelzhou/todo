@@ -1,4 +1,3 @@
-Rails Application for CIS 196 Final Project
 
 Deployed on: http://kellysplanner.herokuapp.com
 
